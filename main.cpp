@@ -8,13 +8,16 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    std::string xx;
-    std::cin >> xx;
+    //std::string xx;
+    //std::cin >> xx;
     //QString qss  = QString::fromStdString(xx);
-    //APIResponse api;
+    //std::cout << "you out: " << xx;
+    //QString(xx.c_str())
 
-    std::cout << "you out: " << xx;
-    //api.getRooms("wrpCode");//QString(xx.c_str())
+    APIResponse api;
+    //api.getRooms("wrpCode");
+
+
 
     return a.exec();
 }

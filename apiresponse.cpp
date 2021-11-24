@@ -2,17 +2,16 @@
 
 APIResponse::APIResponse()
 {
-
     networkManager = new QNetworkAccessManager;
-    connect(networkManager, &QNetworkAccessManager::finished, this, &APIResponse::setReplyFromAPI);
+    connect(networkManager, &QNetworkAccessManager::finished, this, &APIResponse::onResult);
     networkManager->get(QNetworkRequest(QUrl("http://localhost:5000/api/Room")));
 }
 
-/*
+
 void APIResponse::onResult(QNetworkReply* reply)
 {
 
-    replyFromAPI = reply;
+    //replyFromAPI = reply;
 
 
     if(!reply->error()){
@@ -27,10 +26,11 @@ void APIResponse::onResult(QNetworkReply* reply)
         {
             //QJsonObject roomObject = (root.at(i)).toObject();
             //QString rootString = roomObject.value("wrpName").toString();
-            //((root.at(i)).toObject()).value("wrpName").toString()
-            //listofRooms->append(((root.at(i)).toObject()).value("wrpName").toString());
+            //((root.at(i)).toObject()).value("wrpName").toString();
+            //listofRooms.append(((root.at(i)).toObject()).value("wrpName").toString());
 
-            qDebug() << ((root.at(i)).toObject()).value("wrpName").toString();
+            qDebug() << ((root.at(i)).toObject()).value("wrpName").toString().toLatin1();
+
         }
 
         //listofRooms->append()
@@ -44,32 +44,21 @@ void APIResponse::onResult(QNetworkReply* reply)
     }
 
 }
-*/
 
 
+/*
 void APIResponse::setReplyFromAPI(QNetworkReply *newReplyFromAPI)
 {
     if(!newReplyFromAPI->error())
     {
-        document_ = QJsonDocument::fromJson(newReplyFromAPI->readAll());
+        document = QJsonDocument::fromJson(newReplyFromAPI->readAll());
+        QJsonObject root = document.object();
     }
 }
 
 void APIResponse::getRooms(const QString &keyRoomValue)
-try
 {
-    QJsonArray root = document_.array();
-    for(int i = 0; i < root.count(); ++i)
-    {
-        qDebug() << ((root.at(i)).toObject()).value(keyRoomValue).toString();
-    }
+    qDebug() << ((root.at(i)).toObject()).value(keyRoomValue).toString();
 }
-catch (const std::exception & err)
-{
-    qDebug() << err.what();
-}
-catch (...)
-{
-    qDebug() << "хуйня";
-}
+*/
 
