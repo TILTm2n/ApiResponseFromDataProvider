@@ -28,9 +28,8 @@ private slots:
 
 private:
     QNetworkAccessManager* networkManager;
-    QList<QString> listofRooms;
 
-
+    //QList<QString> listofRooms;
     //QString keyByUser;
 
 };

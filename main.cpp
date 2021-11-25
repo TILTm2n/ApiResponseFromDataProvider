@@ -14,9 +14,12 @@ int main(int argc, char *argv[])
     //std::cout << "you out: " << xx;
     //QString(xx.c_str())
 
+
     APIResponse api;
     //api.getRooms("wrpCode");
 
+
+    //system("chcp 65001");
 
 
     return a.exec();

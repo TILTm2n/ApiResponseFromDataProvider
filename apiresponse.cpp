@@ -24,41 +24,16 @@ void APIResponse::onResult(QNetworkReply* reply)
 
         for(int i = 0; i < root.count(); ++i)
         {
-            //QJsonObject roomObject = (root.at(i)).toObject();
-            //QString rootString = roomObject.value("wrpName").toString();
-            //((root.at(i)).toObject()).value("wrpName").toString();
             //listofRooms.append(((root.at(i)).toObject()).value("wrpName").toString());
 
-            qDebug() << ((root.at(i)).toObject()).value("wrpName").toString().toLatin1();
+            qDebug() << ((root.at(i)).toObject()).value("wrpName").toString();
+
 
         }
-
-        //listofRooms->append()
-        //qDebug() << firstObject.value("wrpName").toString();
-        //qDebug() << firstObject.keys().at(0) << " : " << firstObject.value((firstObject.keys().at(0))).toDouble();
-        //qDebug() << firstObject.keys().at(1) << " : " << firstObject.value((firstObject.keys().at(1))).toString();
-        //qDebug() << firstObject.keys().at(2) << " : " << firstObject.value((firstObject.keys().at(2))).toDouble();
-        //qDebug() << firstObject.keys().at(3) << " : " << firstObject.value((firstObject.keys().at(3))).toString();
-        //qDebug() << firstObject.keys().at(4) << " : " << firstObject.value((firstObject.keys().at(4))).toDouble();
-
-    }
-
-}
-
-
-/*
-void APIResponse::setReplyFromAPI(QNetworkReply *newReplyFromAPI)
-{
-    if(!newReplyFromAPI->error())
-    {
-        document = QJsonDocument::fromJson(newReplyFromAPI->readAll());
-        QJsonObject root = document.object();
+        qDebug() << typeid (((root.at(1)).toObject()).value("wrpName").toString()).name();
     }
 }
 
-void APIResponse::getRooms(const QString &keyRoomValue)
-{
-    qDebug() << ((root.at(i)).toObject()).value(keyRoomValue).toString();
-}
-*/
+
+
 
