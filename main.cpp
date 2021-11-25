@@ -1,6 +1,6 @@
 #include <QCoreApplication>
 #include "apiresponse.h"
-
+#include <QStringList>
 #include <iostream>
 
 
@@ -8,22 +8,10 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    //std::string xx;
-    //std::cin >> xx;
-    //QString qss  = QString::fromStdString(xx);
-    //std::cout << "you out: " << xx;
-    //QString(xx.c_str())
-
-
-    APIResponse api;
-    //APIResponse *api = new APIResponse();
-
-
-    //api.getRooms("wrpCode");
-
+    //APIResponse api;
+    APIResponse *api = new APIResponse();
 
     system("chcp 65001");
-
 
     return a.exec();
 }

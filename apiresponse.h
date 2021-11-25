@@ -13,6 +13,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QStringList>
 
 
 class APIResponse : public QObject
@@ -21,16 +22,17 @@ class APIResponse : public QObject
 public:
     APIResponse();
     //void setReplyFromAPI(QNetworkReply *newReplyFromAPI);
-    void getRooms(const QString &keyRoomValue);
+    //void getRooms(const QString &keyRoomValue);
+
+    const QStringList &getListofRooms() const;
 
 private slots:
     void onResult(QNetworkReply* reply);
 
+
 private:
     QNetworkAccessManager* networkManager;
-
-    //QList<QString> listofRooms;
-    //QString keyByUser;
+    QStringList listofRooms;
 
 };
 
