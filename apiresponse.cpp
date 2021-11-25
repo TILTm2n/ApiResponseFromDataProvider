@@ -1,4 +1,5 @@
 #include "apiresponse.h"
+#include <iostream>
 
 APIResponse::APIResponse()
 {
@@ -26,11 +27,11 @@ void APIResponse::onResult(QNetworkReply* reply)
         {
             //listofRooms.append(((root.at(i)).toObject()).value("wrpName").toString());
 
-            qDebug() << ((root.at(i)).toObject()).value("wrpName").toString();
-
+            std::cout << ((root.at(i)).toObject()).value("wrpName").toString().toStdString() << std::endl;
 
         }
-        qDebug() << typeid (((root.at(1)).toObject()).value("wrpName").toString()).name();
+        //qDebug() << typeid (((root.at(1)).toObject()).value("wrpName").toString()).name();
+
     }
 }
 

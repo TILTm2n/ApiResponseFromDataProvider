@@ -16,10 +16,13 @@ int main(int argc, char *argv[])
 
 
     APIResponse api;
+    //APIResponse *api = new APIResponse();
+
+
     //api.getRooms("wrpCode");
 
 
-    //system("chcp 65001");
+    system("chcp 65001");
 
 
     return a.exec();
